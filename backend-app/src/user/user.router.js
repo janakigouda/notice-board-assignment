@@ -9,13 +9,13 @@ userRoute.post("/login",[validateUsername],async(req,res)=>{
     try{
         const error=validationResult(req);
         if(!error.isEmpty()){
-            return res.send(error);
+            res.send(error);
         }else{
             const user=await users.findOne({username:req.body.username});
             if(user){
                 res.status(200).send(user);
             }else{
-                const createUser = users.create(req.body);
+                let createUser =await users.create(req.body);
                 res.status(200).send(createUser);
             }
         }

@@ -1,5 +1,18 @@
 # notice-board-assignment
 
+<h3>Frontend</h3>
+<hr>
+<p>In frontend the UI ,UX and frontend ogics are implemented using react, redux , routers ans all . Down you can find the tech stacks used to build the frontend and also deployed link</p>
+<h4>Tech stacks</h4>
+<ul>
+<li>React js</li>
+<li>Redux</li>
+<li>Chakra UI</li>
+<li>React routers</li>
+</ul>
+
+
+<hr>
 <h3>Backend</h3>
 <hr>
 <p>In backend REST APIs implemented, and backend includes all database schema and database design. Down you can find the tech stacks used to build the backend and also deployed link</p>
