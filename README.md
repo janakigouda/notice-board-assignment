@@ -9,4 +9,6 @@
 <li>Express js</li>
 <li>MongoDB</li>
 </ul>
-<p>Deployed link:</p>
+<p>Deployed links</p>
+<p>To get all users: https://noticeboar.onrender.com/users</p>
+<p>To get all user notices: https://noticeboar.onrender.com/userNotice</p>
