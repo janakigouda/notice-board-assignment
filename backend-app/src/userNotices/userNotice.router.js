@@ -1,5 +1,4 @@
 const {Router} = require("express");
-const Users = require("../user/user.module");
 const userNotices = require("./userNotice.module");
 
 const userNoticeRoute=Router();
@@ -15,22 +14,17 @@ userNoticeRoute.post("/",async(req,res)=>{
 
 userNoticeRoute.get("/",async(req,res)=>{
     try{
-        const userList=await userNotices.find();
-        let data=[];
-        userList.map(async(u)=>{
-            let uid=u.userid;
-            let notice=u.notice;
-            let time=u.createdAt;
-            let username=await Users.findById(uid);
-            let obj={
-                time:time,
-                username:username.username,
-                notice:notice,
+        const userNoticList=await userNotices.aggregate([
+            {
+                $lookup:{
+                    from:"users",
+                    localField:"userid",
+                    foreignField:"_id",
+                    as:"user"
+                }
             }
-            console.log(obj);
-            data.push(obj);
-        })
-        res.status(200).json(data);
+        ])
+        res.status(200).send(userNoticList);
     }catch(err){ 
         res.status(500).send(err);
     };
