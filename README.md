@@ -10,6 +10,7 @@
 <li>Chakra UI</li>
 <li>React routers</li>
 </ul>
+<p>Deployed Link: https://noticeboard-omega.vercel.app/ </p>
 
 
 <hr>
